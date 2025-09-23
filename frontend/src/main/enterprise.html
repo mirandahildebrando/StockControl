@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa - Controle de Estoque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Empresa</h2>
+        <button onclick="mostrarTela('estoqueDiv')" class="btn btn-light">Estoque</button>
+        <button onclick="logout()" class="btn btn-danger">Sair</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content flex-grow-1">
+        <div id="estoqueDiv" class="card p-4">
+            <h4>Controle de Estoque</h4>
+            <input type="text" id="produtoNome" placeholder="Nome do produto" class="form-control mb-2">
+            <input type="number" id="produtoPreco" placeholder="Preço" class="form-control mb-2">
+            <button class="btn btn-success mb-3" onclick="cadastrarProduto()">Cadastrar Produto</button>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaProdutos">
+                    <!-- Produtos listados aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
