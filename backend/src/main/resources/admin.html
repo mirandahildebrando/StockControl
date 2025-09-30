@@ -9,22 +9,25 @@
 <body>
 <div class="d-flex">
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar p-3 bg-light" style="width:200px;">
         <h2>Admin</h2>
-        <button onclick="mostrarTela('criarEmpresaDiv')" class="btn btn-light">Criar Empresa</button>
-        <button onclick="mostrarTela('listarEmpresasDiv')" class="btn btn-light">Listar Empresas</button>
+        <button onclick="mostrarTela('criarEmpresaDiv')" class="btn btn-light w-100 mb-2">Criar Empresa</button>
+        <button onclick="mostrarTela('listarEmpresasDiv')" class="btn btn-light w-100">Listar Empresas</button>
     </div>
 
     <!-- Main Content -->
-    <div class="main-content flex-grow-1">
+    <div class="main-content flex-grow-1 p-3">
+        <!-- Criar Empresa -->
         <div id="criarEmpresaDiv" class="card p-4">
             <h4>Criar Empresa</h4>
             <input type="text" id="empresaNome" placeholder="Nome da Empresa" class="form-control mb-2">
             <input type="email" id="empresaEmail" placeholder="Email da Empresa" class="form-control mb-2">
             <input type="password" id="empresaSenha" placeholder="Senha da Empresa" class="form-control mb-2">
-            <button class="btn btn-success" onclick="criarEmpresa()">Criar Empresa</button>
+            <button class="btn btn-success w-100" onclick="criarEmpresa()">Criar Empresa</button>
+            <div id="msgEmpresa" class="text-success mt-2"></div>
         </div>
 
+        <!-- Listar Empresas -->
         <div id="listarEmpresasDiv" class="card p-4" style="display:none;">
             <h4>Empresas Criadas</h4>
             <table class="table table-striped">
@@ -32,7 +35,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Produtos</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody id="tabelaEmpresas">
